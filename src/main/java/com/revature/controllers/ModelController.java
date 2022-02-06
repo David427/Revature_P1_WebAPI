@@ -7,6 +7,7 @@ import com.revature.models.Customer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +57,12 @@ public class ModelController {
 
         custList = (List<Customer>) mr.getAllRecords("customers");
 
-        response.getWriter().append(gson.toJson(custList));
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(gson.toJson(custList));
+        out.flush();
+        // response.getWriter().append(gson.toJson(custList));
     }
 
 

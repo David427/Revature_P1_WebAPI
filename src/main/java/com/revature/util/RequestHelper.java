@@ -19,6 +19,7 @@ public class RequestHelper {
 
         String[] uriTokens = uri.split("/");
         System.out.println(Arrays.toString(uriTokens));
+        System.out.println(response);
 
         switch (uriTokens.length) {
             case 0:
@@ -27,15 +28,22 @@ public class RequestHelper {
                 response.sendError(404);
             }
             case 3: {
-                if (("customers").equals(uriTokens[2])) mc.getAllCustomers(request, response);
-                else if (("products").equals(uriTokens[2])) mc.getAllProducts(request, response);
-                else response.sendError(400, "Collection does not exist.");
+                if (("customers").equals(uriTokens[2])) {
+                    mc.getAllCustomers(request, response);
+                } else if (("products").equals(uriTokens[2])) {
+                    mc.getAllProducts(request, response);
+                } else {
+                    response.sendError(400, "Collection does not exist.");
+                }
                 break;
             }
             case 4: {
                 request.setAttribute("id", uriTokens[3]);
-                if (("customers").equals(uriTokens[2])) mc.getCustomer(request, response);
-                else if (("products").equals(uriTokens[2])) mc.getProduct(request, response);
+                if (("customers").equals(uriTokens[2])) {
+                    mc.getCustomer(request, response);
+                } else if (("products").equals(uriTokens[2])) {
+                    mc.getProduct(request, response);
+                }
 
                 break;
             }
