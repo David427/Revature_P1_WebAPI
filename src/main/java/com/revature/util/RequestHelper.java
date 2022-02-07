@@ -54,7 +54,6 @@ public class RequestHelper {
     throws IOException {
         String uri = request.getRequestURI();
         String[] uriTokens = uri.split("/");
-        System.out.println(Arrays.toString(uriTokens));
 
         switch (uriTokens.length) {
             case 0:

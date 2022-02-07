@@ -11,7 +11,6 @@ import java.util.List;
 public class DriverTest {
     public static void main(String[] args) throws IOException {
         ModelRepoImpl modelRepo = new ModelRepoImpl();
-        Gson gson = new Gson();
         Customer testCust = new Customer("Test", "Customer", 8, true);
         Customer testCust2 = new Customer("Test", "Customer-Two", 7, false);
         testCust2.setId(5);
@@ -25,14 +24,5 @@ public class DriverTest {
         System.out.println("getAllRecords OUTPUT: " + returnedList);
         modelRepo.updateRecord(testCust2);
         modelRepo.deleteRecord(testCust3);
-
-        List<Customer> custList;
-        custList = (List<Customer>) modelRepo.getAllRecords("customers");
-        System.out.println(custList);
-        System.out.println(gson.toJson(custList));
-        HttpServletRequest request = null;
-        assert false;
-        Customer cust = gson.fromJson(request.getReader(), Customer.class);
-        System.out.println(cust);
     }
 }
