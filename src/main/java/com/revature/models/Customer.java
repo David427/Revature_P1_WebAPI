@@ -12,13 +12,13 @@ public class Customer {
     @Column(name = "c_id")
     private int id;
     @Column(name = "first_name")
-    private String firstName;
+    private String firstName = "David";
     @Column(name = "last_name")
-    private String lastName;
+    private String lastName = "Melanson Jr";
     @Column(name = "favorite_store")
-    private int favoriteStore;
+    private int favoriteStore = 1;
     @Column(name = "vc_member")
-    private boolean vcMember;
+    private boolean vcMember = true;
 
     public Customer() {
     }

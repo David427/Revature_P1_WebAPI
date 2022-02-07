@@ -15,11 +15,7 @@ public class RequestHelper {
     public static void getProcess(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
         String uri = request.getRequestURI();
-        System.out.println(uri);
-
         String[] uriTokens = uri.split("/");
-        System.out.println(Arrays.toString(uriTokens));
-        System.out.println(response);
 
         switch (uriTokens.length) {
             case 0:
@@ -57,8 +53,6 @@ public class RequestHelper {
     public static void postProcess(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
         String uri = request.getRequestURI();
-        System.out.println(uri);
-
         String[] uriTokens = uri.split("/");
         System.out.println(Arrays.toString(uriTokens));
 
@@ -85,9 +79,7 @@ public class RequestHelper {
     public static void putProcess(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
         String uri = request.getRequestURI();
-
         String[] uriTokens = uri.split("/");
-        System.out.println(Arrays.toString(uriTokens));
 
         switch (uriTokens.length) {
             case 0:
@@ -122,10 +114,7 @@ public class RequestHelper {
     public static void deleteProcess(HttpServletRequest request, HttpServletResponse response)
     throws IOException, ResourceNotFoundException {
         String uri = request.getRequestURI();
-        System.out.println(uri);
-
         String[] uriTokens = uri.split("/");
-        System.out.println(Arrays.toString(uriTokens));
 
         switch (uriTokens.length) {
             case 0:

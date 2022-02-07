@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>ServletMovieApp Maven Webapp</name>
+    <name>Project1 Web API</name>
     <url>http://localhost:8080/</url>
 
     <properties>
